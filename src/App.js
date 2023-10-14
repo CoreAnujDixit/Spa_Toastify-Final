@@ -27,14 +27,16 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col">
       <div>
         <Navbar />
       </div>
       <div>
         <Filter filterData={filterData} />
       </div>
-      <div>{loading ? <Spinner /> : <Cards courses={courses} />}</div>
+      <div className="w-11/12 max-w-[1200px] flex justify-center items-center mx-auto min-h-[50vh] flex-wrap">
+        {loading ? <Spinner /> : <Cards courses={courses} />}
+      </div>
     </div>
   );
 };

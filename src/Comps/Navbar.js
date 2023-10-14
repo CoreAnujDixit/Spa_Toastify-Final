@@ -1,14 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const Navbar = () => {
-    return (
-        <div>
-            <nav>
-                <h2>Top Course</h2>
-            </nav>
-
-        </div>
-    )
-}
+  return (
+    <div>
+      <nav className="bg-black py-4 text-center text-white text-2xl font-bold	">
+        <h2>Top Course</h2>
+      </nav>
+    </div>
+  );
+};
 
 export default Navbar;
