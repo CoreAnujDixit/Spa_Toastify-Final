@@ -9,6 +9,7 @@ import Spinner from "./Comps/Spinner";
 const App = () => {
   const [courses, setcourses] = useState(null);
   const [loading, setloading] = useState(true);
+  const [category, setcategory] = useState(filterData[0].title)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,10 +33,10 @@ const App = () => {
         <Navbar />
       </div>
       <div>
-        <Filter filterData={filterData} />
+        <Filter filterData={filterData} category={category} setcategory={setcategory} />
       </div>
       <div className="w-11/12 max-w-[1200px] flex justify-center items-center mx-auto min-h-[50vh] flex-wrap">
-        {loading ? <Spinner /> : <Cards courses={courses} />}
+        {loading ? <Spinner /> : <Cards courses={courses} category={category} />}
       </div>
     </div>
   );
